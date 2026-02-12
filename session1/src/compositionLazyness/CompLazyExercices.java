@@ -248,7 +248,6 @@ public class CompLazyExercices {
     		    new Person("Beatriz", 22)
     		));
     	
-    	
     	Comparator<Person> byAge = (x, y) -> {
     	    if (x.getAge() < y.getAge()) return -1;
     	    if (x.getAge() > y.getAge()) return 1;
@@ -394,7 +393,7 @@ public class CompLazyExercices {
     	boolean todosSonPares = Arrays.stream(PRUEBAS).peek(System.out::println).allMatch(x -> ((x%2) == 0));
     	boolean todosMayores0 = Arrays.stream(PRUEBAS).peek(System.out::println).noneMatch(x -> x > 0);
     	
-    	System.out.println("Existen numeros mayor" + numMin + ": " + (mayorValorFijado ? "Si" : "No"));
+    	System.out.println("Existen numeros mayor " + numMin + ": " + (mayorValorFijado ? "Si" : "No"));
     	System.out.println("Son todos pares: " + (todosSonPares ? "Si" : "No"));
     	System.out.println("Son todos mayores de 0: " + (todosMayores0 ? "Si" : "No"));
     	
@@ -463,6 +462,17 @@ public class CompLazyExercices {
      */
     private static void exercise7_StreamCannotBeReused() {
         // TODO: implement this exercise
+    	
+    	List<String> palabras = new ArrayList<>(Arrays.asList("coche", "Java", "Mundo", "Stream", "luna", "sol"));
+    	
+    	// Da IllegalStateException esto
+    	
+    	/*
+    	palabras.stream()
+    		.anyMatch(x -> x.length() > 4)
+    		.allMatch(x -> x.length() > 2);
+    	*/
+    	
     }
     
     
