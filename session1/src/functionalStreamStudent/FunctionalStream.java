@@ -580,7 +580,7 @@ public class FunctionalStream {
 		int minLength;
 		
 		try {
-			minLength = Integer.parseInt(input);
+			minLength = Integer.parseInt(input); 
 		} catch (NumberFormatException e) {
 			System.out.println("Valor no valido, se esperaba un numero entero.");
 			return;
