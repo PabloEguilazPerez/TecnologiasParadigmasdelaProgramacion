@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.function.Predicate;
 import java.util.function.Function;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
 /**
@@ -293,7 +294,7 @@ public class GraphFunctional {
         Function<Integer, Integer> doubleThenIncrement = doubleValue.andThen(increment);
 
         int val = 5;
-        System.out.println("Ejercicio 3 - Resultado para " + val + ": " + doubleThenIncrement.apply(val));
+        System.out.println("Resultado para " + val + ": " + doubleThenIncrement.apply(val));
     }
 
     /**
@@ -309,7 +310,7 @@ public class GraphFunctional {
         List<Integer> nodes = List.of(0, 1, 2);
         
 
-        System.out.println("Ejecución compuesta (Print + Debug):");
+        System.out.println("Junto (Print + Debug):");
         visitNodes(nodes, print.andThen(debug));
     }
 
@@ -320,12 +321,12 @@ public class GraphFunctional {
      */
     public static void exercise5_PathValidationReusable(List<List<Integer>> graph) {
   
+    	
         Predicate<Integer> positiveIndex = i -> i >= 0;
         Predicate<Integer> lessThanSize = i -> i < graph.size();
         Predicate<Integer> validIndex = positiveIndex.and(lessThanSize);
 
-        java.util.function.BiPredicate<Integer, Integer> areAdjacent = 
-            (u, v) -> graph.get(u).contains(v);
+        BiPredicate<Integer, Integer> areAdjacent = (u, v) -> graph.get(u).contains(v);
 
         List<Integer> path = List.of(0, 1, 3, 4);
         boolean isValid = true;
@@ -336,7 +337,7 @@ public class GraphFunctional {
                 break;
             }
         }
-        System.out.println("¿El camino " + path + " es válido?: " + isValid);
+        System.out.println("Es valido el camino" + path + ": " + (isValid ? "Si" : "No"));
     }
 
     // ------------------------------------------------------------
