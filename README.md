@@ -476,3 +476,28 @@ compose → derecha → izquierda
 ### 5. Intentar usar variables modificadas dentro de lambda
 
 Las variables usadas en lambdas deben ser **final o effectively final**.
+
+# Ejemplos
+
+```java
+List<Integer> allNodes = IntStream.range(0, graph.size()).boxed().collect(Collectors.toList());
+```
+
+```java 
+private static List<Integer> filterNodes(List<Integer> nodes, Predicate<Integer> p) {
+    return nodes.stream()
+        .filter(p)
+        .collect(Collectors.toList());
+}
+```
+
+```java
+System.out.println("Departamentos");
+employees.stream()
+    .map(Employee::getDepartment)
+    .filter(dept -> dept != null && !dept.trim().isEmpty())
+    .map(String::toUpperCase)
+    .distinct()
+    .sorted()
+    .forEach(dept -> System.out.println(dept));
+```
