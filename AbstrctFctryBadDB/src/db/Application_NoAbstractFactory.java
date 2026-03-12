@@ -12,6 +12,12 @@ public class Application_NoAbstractFactory {
         this.connectionFactory = connectionFactory;
         this.queryFactory = queryFactory;
     }
+    
+    private static void run(ConexionConsultaFactory factory) {
+		DBConnection connection = factory.createConnection();
+		DBQuery query = factory.createQuery();
+		
+	}
 
     public void createConnection() {
         connection = connectionFactory.createConnection();
