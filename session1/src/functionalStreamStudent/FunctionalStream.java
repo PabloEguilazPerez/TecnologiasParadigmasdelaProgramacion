@@ -181,7 +181,7 @@ public class FunctionalStream {
         // TODO: implementar Supplier<Double> usando Math::random
         // y su lambda equivalente, mostrando varios valores generados.
         
-        Supplier<Double> randomRef = Math::random;
+        Supplier<Double> randomReokeyf = Math::random;
         Supplier<Double> randomLambda = () -> Math.random();
         
         //Test
@@ -194,7 +194,7 @@ public class FunctionalStream {
 
     /**
      * Ejercicio 8:
-     * Supplier<StringBuilder> usando referencia a constructor (StringBuilder::new)
+     * Supplier<StringBuilder> usando referencia a constructor (StringBuilder::new)	
      * y su lambda equivalente (() -> new StringBuilder()).
      */
     public static void ejercicio8SupplierCreateStringBuilder() {

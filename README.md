@@ -501,3 +501,11 @@ employees.stream()
     .sorted()
     .forEach(dept -> System.out.println(dept));
 ```
+
+```java
+int[] PRUEBAS = {-2, -1, 0, 1, 2, 3, 5};
+
+int total = (int) Arrays.stream(PRUEBAS).count(); 
+boolean pares = Arrays.stream(PRUEBAS).anyMatch(x -> (x%2) == 0); 
+boolean todosPositivos = Arrays.stream(PRUEBAS).allMatch(x -> x > 0); 
+```
