@@ -33,6 +33,8 @@ public class Application_NoAbstractFactory {
         Application_NoAbstractFactory app1 =
             new Application_NoAbstractFactory(new MySQLConnectionFactory(), new MySQLQueryFactory());
 
+        run(new MySqlConnectionQueryFactory());
+        	
         app1.createConnection();
         app1.connection.open();
         app1.connection.close();
