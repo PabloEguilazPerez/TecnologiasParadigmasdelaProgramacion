@@ -181,7 +181,7 @@ public class FunctionalStream {
         // TODO: implementar Supplier<Double> usando Math::random
         // y su lambda equivalente, mostrando varios valores generados.
         
-        Supplier<Double> randomReokeyf = Math::random;
+        Supplier<Double> randomRef = Math::random;
         Supplier<Double> randomLambda = () -> Math.random();
         
         //Test
