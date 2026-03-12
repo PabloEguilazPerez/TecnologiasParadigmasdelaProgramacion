@@ -1,9 +1,6 @@
 public class Demo {
 
-    public static void main(String[] args) {
-
-    	
-    	
+    public static void main(String[] args) {    	
         AdminService admin = new AdminService();
         PlayerService player = new PlayerService();
         ScoreboardService scoreboard = new ScoreboardService();

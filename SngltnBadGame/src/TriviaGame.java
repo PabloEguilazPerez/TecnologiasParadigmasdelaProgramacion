@@ -2,8 +2,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 class TriviaGame {
-    private int round = 1;
-    private final Map<String, Integer> score = new HashMap<>();
+	
+    private int round;
+    
+    private final Map<String, Integer> score;
+	
+	// Singleton
+	private static TriviaGame instance;
+	
+	private TriviaGame() {
+		round = 1;
+		score = new HashMap<>();
+	}
+	
+	public static TriviaGame getInstance() {
+		if (instance == null) {
+			instance = new TriviaGame();
+		} 
+		return instance;
+	}	
+	// Fin
 
     public void answerCorrect(String player) {
         score.put(player, score.getOrDefault(player, 0) + 10);
@@ -13,7 +31,9 @@ class TriviaGame {
         round++;
     }
 
-    public int getRound() { return round; }
+    public int getRound() { 
+    	return round; 
+    }
 
     public int getScore(String player) {
         return score.getOrDefault(player, 0);
@@ -21,22 +41,24 @@ class TriviaGame {
 }
 
 class PlayerService {
-	private TriviaGame game;
+	
+	//private TriviaGame game;
 	
 	public PlayerService() {
-		game = new TriviaGame();
+		//game = TriviaGame.getInstance();
 	}
 	
     public void submitCorrectAnswer(String player) {
-        game.answerCorrect(player);
+    	TriviaGame.getInstance().answerCorrect(player);
     }
 }
 
 class AdminService {
+	
 	private TriviaGame game;
 	
 	public AdminService() {
-		game = new TriviaGame();
+		game = TriviaGame.getInstance();
 	}	
 	
     public void advanceRound() {
@@ -49,7 +71,7 @@ class ScoreboardService {
 	private TriviaGame game;
 	
 	public ScoreboardService() {
-		game = new TriviaGame();
+		game = TriviaGame.getInstance();
 	}	
 	
 
